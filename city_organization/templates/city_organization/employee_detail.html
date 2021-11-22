@@ -1,0 +1,20 @@
+{% extends 'base.html'%}
+
+{% block body %}
+    <h1>{{employee.organization.title}}</h1>
+    <hr />
+    <h2>{{employee.get_full_name}}</h2>
+    <div>
+        <h3>Salary: </h3>
+        <p>{{employee.salary}}</p>
+    </div>
+    <ul>
+    {% for project in project_list %}
+        <li>
+            <a href="/project/{{project.id}}">
+                {{project.title}}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
