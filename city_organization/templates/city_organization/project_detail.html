@@ -8,13 +8,22 @@
         <h3>Number of Employees: </h3>
         <p>{{project_employees_count}}</p>
     </div>
-    <ul>
+    <table>
+        <tr>
+            <td>Employee Name</td>
+            <td>Salary</td>
+        </tr>
         {% for employee in project_employees %}
-        <li>
-            <a href="/employee/{{employee.id}}">
-                {{employee.get_full_name}}
-            </a>
-        </li>
+        <tr>
+            <td>
+                <a href="/employee/{{employee.id}}">
+                    {{employee.get_full_name}}
+                </a>
+            </td>
+            <td>
+                {{employee.salary}}
+            </td>
+        </tr>
         {% endfor %}
-    </ul>
+    </table>
 {% endblock %}
